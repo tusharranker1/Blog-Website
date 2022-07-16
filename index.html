@@ -5,331 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotes</title>
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            animation-name: blog-body;
-            animation-duration: 2s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        @keyframes blog-body {
-            100%
-            {
-                opacity: 1;
-            }
-        }
-        .nav-bar-types {
-            position: absolute;
-            top: 0px;
-            width: 100%;
-            height: 50px;
-            background-image: linear-gradient(to right, #4358cf, #d98bed);
-            display: flex;
-            flex-direction: row;
-        }
-
-        .quotes {
-            /* border: 2px solid red; */
-            height: 60%;
-            width: 12%;
-            margin-left: 10px;
-            margin-right: 15px;
-            margin-top: auto;
-            margin-bottom: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            border-radius: 20px;
-            color: rgb(255, 255, 255);
-            font-size: bold;
-            font-size: 1.4rem;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        .quotes:hover {
-            box-shadow: 3px 1px 10px 3px rgb(0, 0, 0);
-        }
-
-        .all-quotes {
-            width: 100%;
-            height: 1000px;
-            /* border: 2px solid red; */
-            transform: translateY(50px);
-            display: flex;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            background-image: linear-gradient(to right, black, white);
-        }
-
-        .my-quotes {
-            width: 40%;
-            height: 40%;
-            /* border: 2px solid blue; */
-            margin-top: auto;
-            margin-bottom: auto;
-            border-radius: 30px;
-            /* background-image: linear-gradient(#4358cfb4, #d98bed); */
-            /* padding: 20px; */
-            overflow: hidden;
-            overflow-y: scroll;
-            text-align: center;
-        }
-        #mq-1:hover{
-            box-shadow: 5px 5px 35px 15px rgb(255, 255, 255);
-        }
-        #mq-2:hover{
-            box-shadow: 5px 5px 35px 15px rgb(0, 0, 0);
-        }
-        #mq-3:hover{
-            box-shadow: 5px 5px 35px 15px rgb(255, 255, 255);
-        }
-        #mq-4:hover{
-            box-shadow: 5px 5px 35px 15px rgb(0, 0, 0);
-        }
-        .my-quotes::-webkit-scrollbar
-        {
-            height: 0px;
-        }
-        #mq-1 h1{
-            margin-top: 0px;
-            color: rgb(255, 187, 0);
-            text-shadow: 2px 5px 20px rgb(255, 255, 255);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        #mq-1 ul{
-            color: white;
-            /* font-size: 1.4rem; */
-            text-align: left;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-top: 30px;
-        }
-        #mq-1 ul:hover{
-            text-shadow: 5px 5px 15px black;
-            cursor: pointer;
-            animation-name: size-increase;
-            animation-duration: 1s;
-            color: aqua;
-            animation-fill-mode: forwards;
-        }
-        @keyframes size-increase {
-            100%{
-                font-size: 1.4rem;
-            }
-        }
-        #mq-2 h1{
-            margin-top: 0px;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 5px 20px rgb(0, 0, 0);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        #mq-2 ul{
-            color: rgb(0, 0, 0);
-            /* font-size: 1.4rem; */
-            text-align: left;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-top: 30px;
-        }
-        #mq-2 ul:hover{
-            text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.925);
-            cursor: pointer;
-            animation-name: size-increase;
-            animation-duration: 1s;
-            color: rgb(0, 0, 0);
-            animation-fill-mode: forwards;
-        }
-        @keyframes size-increase {
-            100%{
-                font-size: 1.4rem;
-            }
-        }
-        #mq-3 h1{
-            margin-top: 0px;
-            color: rgb(0, 255, 255);
-            text-shadow: 2px 5px 20px rgb(255, 255, 255);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        #mq-3 ul{
-            color: white;
-            /* font-size: 1.4rem; */
-            text-align: left;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-top: 30px;
-            
-        }
-        #mq-3 ul:hover{
-            text-shadow: 5px 5px 15px wheat;
-            cursor: pointer;
-            animation-name: size-increase;
-            animation-duration: 1s;
-            color: wheat;
-            animation-fill-mode: forwards;
-        }
-        @keyframes size-increase {
-            100%{
-                font-size: 1.4rem;
-            }
-        }
-        #mq-4 h1{
-            margin-top: 0px;
-            color: rgb(0, 255, 157);
-            text-shadow: 2px 5px 20px rgb(0, 0, 0);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        #mq-4 ul{
-            color: rgb(0, 0, 0);
-            /* font-size: 1.4rem; */
-            text-align: left;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-top: 30px;
-            
-        }
-        #mq-4 ul:hover{
-            text-shadow: 5px 5px 10px rgb(255, 255, 255);
-            cursor: pointer;
-            animation-name: size-increase;
-            animation-duration: 1s;
-            color: rgb(17, 0, 255);
-            animation-fill-mode: forwards;
-        }
-        @keyframes size-increase {
-            100%{
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    <title>Blog-Tushar</title>
+    <link rel="stylesheet" href="css-main.css">
+    <link rel="stylesheet" href="css-mobile.css">
+    <link rel="stylesheet" href="css-fold.css">
 </head>
 
 <body>
-    <div class="nav-bar-types">
-        <a href="" class="quotes">Morning Quotes</a>
-        <a href="" class="quotes">Inspisration Quotes</a>
-        <a href="" class="quotes">Love Quotes</a>
-        <a href="" class="quotes">Aesthetic Quotes</a>
+    <div class="box1">
+        <h1><a href="main-blog.html" >Welcome To My Blog</a></h1>
+        <div class="platform"></div>
+        <div class="wrapper0">
+            <div class="box">
+                <div id="box1"><a href="https://www.instagram.com/_.tushar_2024/" target="_blank"><img src="gmail.jpeg" alt=""></a></div>
+                <div id="box2"><a href="https://www.instagram.com/_.tushar_2024/" target="_blank"><img src="gmail.jpeg" alt=""></a></div>
+                <div id="box3"><a href="https://www.instagram.com/_.tushar_2024/" target="_blank"><img src="gmail.jpeg" alt=""></a></div>
+                <div id="box4"><a href="https://www.instagram.com/_.tushar_2024/" target="_blank"><img src="gmail.jpeg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="wrapper1">
+            <div class="boxw">
+                <div id="box5"><a href="https://www.linkedin.com/in/tushar2024kumar/" target="_blank"><img src="watsapp.jpeg" alt=""></a></div>
+                <div id="box6"><a href="https://www.linkedin.com/in/tushar2024kumar/" target="_blank"><img src="watsapp.jpeg" alt=""></a></div>
+                <div id="box7"><a href="https://www.linkedin.com/in/tushar2024kumar/" target="_blank"><img src="watsapp.jpeg" alt=""></a></div>
+                <div id="box8"><a href="https://www.linkedin.com/in/tushar2024kumar/" target="_blank"><img src="watsapp.jpeg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="wrapper2">
+            <div class="boxG">
+                <div id="box9"><a href="https://github.com/tusharranker1" target="_blank"><img src="github.jpeg" alt=""></a></div>
+                <div id="box10"><a href="https://github.com/tusharranker1" target="_blank"><img src="github.jpeg" alt=""></a></div>
+                <div id="box11"><a href="https://github.com/tusharranker1" target="_blank"><img src="github.jpeg" alt=""></a></div>
+                <div id="box12"><a href="https://github.com/tusharranker1" target="_blank"><img src="github.jpeg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="wrapper3">
+            <div class="boxGM">
+                <div id="box9"><a href="mailto:gmail@tushar2002working.com" target="_blank"><img src="insta.jpeg" alt=""></a></div>
+                <div id="box10"><a href="mailto:gmail@tushar2002working.com" target="_blank"><img src="insta.jpeg" alt=""></a></div>
+                <div id="box11"><a href="mailto:gmail@tushar2002working.com" target="_blank"><img src="insta.jpeg" alt=""></a></div>
+                <div id="box12"><a href="mailto:gmail@tushar2002working.com" target="_blank"><img src="insta.jpeg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="rope"></div>
+        <div class="quote"><a href="main-blog.html"><span>PRESS HERE</span></a></div>
     </div>
-    <div class="all-quotes">
-        <div class="my-quotes" id="mq-1">
-            <h1>Morning Quotes</h1>
-            <ul><li>Love the life you live, live the life you love. Good Morning!</li></ul>
-            <ul><li>A beautiful day begins with a beautiful mindset. Good morning!</li></ul>
-            <ul><li>God’s plan is always more beautiful than our desire.</li></ul>
-            <ul><li>You have to get up every morning and tell yourself I can do this. Good Morning!</li></ul>
-            <ul><li>A soft attitude always creates strong relations.</li></ul>
-            <ul><li>95% of life is due to the tone of voice; It’s not what we say, It’s how we say, just change the tone, and see life changes.</li></ul>
-            <ul><li>Mission one accomplished. I woke up.</li></ul>
-            <ul><li>The best you can do is just remain silent Because no words can explain the battle that’s going on in your heart and mind.</li></ul>
-            <ul><li>Usually I am in a good mood in the mornings, until I start meeting people.</li></ul>
-            <ul><li>Every morning starts a new page in your story. Make it a great one today. – Good Morning</li></ul>
-            <ul><li>Life smiles at you when you are happy But, Life salutes you when you make others happy.</li></ul>
-            <ul><li>Be bold when you lose, Be calm when you win. Changing the face can change nothing, But facing the change can change everything</li></ul>
-            <ul><li>Trust is the glue of life. It’s the foundational principle that holds all relationships.</li></ul>
-            <ul><li>New thoughts, new life; all is in your hands. So begin benign. It is New Year’s morning. May everything go fine!</li></ul>
-            <ul><li>Life is flowing like a river with unexpected turns. It may be Good, maybe bad. Learn to enjoy each turn because all these turns never return.</li></ul>
-            <ul><li>Never expect the definition of life from others; it is your life; define it yourself.</li></ul>
-            <ul><li>When life is one, why do you take the trouble of thinking twice? Just do it!</li></ul>
-            <ul><li>From morning’s first sunlight till evening’s last star, NEVER forget how VERY SPECIAL you are good Morning</li></ul>
-            <ul><li>Morning without you is a dwindled dawn.</li></ul>
-            <ul><li>Keep smiling, because life is a beautiful thing and there’s so much to smile about. Good Morning!</li></ul>
-        </div>
-        <div class="my-quotes" id="mq-2">
-                <h1>Inspiration Quotes</h1>
-                <ul><li>“Be yourself; everyone else is already taken.”
-                    ― Oscar Wilde</li></ul>
-                <ul><li>“Be the change that you wish to see in the world.”
-                    ― Mahatma Gandhi</li></ul>
-                <ul><li>“Without music, life would be a mistake.”
-                    ― Friedrich Nietzsche</li></ul>
-                <ul><li>“We are all in the gutter, but some of us are looking at the stars.”
-                    ― Oscar Wilde</li></ul>
-                <ul><li>“I have not failed. I've just found 10,000 ways that won't work.”
-                    ― Thomas A. Edison</li></ul>
-                <ul><li>“It is never too late to be what you might have been.”
-                    ― George Eliot</li></ul>
-                <ul><li>“Everything you can imagine is real.”
-                    ― Pablo Picasso</li></ul>
-                <ul><li>“Life isn't about finding yourself. Life is about creating yourself.”
-                    ― George Bernard Shaw</li></ul>
-                <ul><li>“A person's a person, no matter how small.”
-                    ― Dr. Seuss, Horton Hears a Who!</li></ul>
-                <ul><li>“Well-behaved women seldom make history.”
-                    ― Laurel Thatcher Ulrich</li></ul>
-                <ul><li>“Nothing is impossible, the word itself says 'I'm possible'!”
-                    ― Audrey Hepburn</li></ul>
-                <ul><li>“Happiness is not something ready made. It comes from your own actions.”
-                    ― Dalai Lama XIV</li></ul>
-                <ul><li>“Peace begins with a smile..”
-                    ― Mother Teresa</li></ul>
-                <ul><li>“Two wrongs don't make a right, but they make a good excuse.”
-                    ― Thomas Szasz</li></ul>
-                <ul><li>"We should not give up and we should not allow the problem to defeat us."
-                    - APJ Abdul Kalam
-                </li></ul>
-                <ul><li>“You are not rich until you have a rich heart.”
-                    ― Roy T. Bennett</li></ul>
-                <ul><li>Most people are, Scout, when you finally see them.”
-                    ― Harper Lee</li></ul>
-                <ul><li>“I'd rather be hated for who I am, than loved for who I am not.”
-                    ― Kurt Cobain</li></ul>
-                <ul><li>“Not being heard is no reason for silence.”
-                    ― Hugo, Victor</li></ul>
-                <ul><li>“I am not a teacher, but an awakener.”
-                    ― Robert Frost</li></ul>
-        </div>
-        <div class="my-quotes" id="mq-3">
-                <h1>Love Quotes</h1>
-                <ul><li>For small creatures such as we, the vastness is bearable only through love.</li></ul>
-                <ul><li>When you're a kid, you assume your parents are soulmates. My kids are gonna be right about that.</li></ul>
-                <ul><li>Two people in love, alone, isolated from the world, that's beautiful.</li></ul>
-                <ul><li>True love stories never have endings</li></ul>
-                <ul><li>You're my one in five billion</li></ul>
-                <ul><li>Happiness is anyone and anything at all that's loved by you</li></ul>
-                <ul><li>A friend is someone who knows all about you and still loves you</li></ul>
-                <ul><li>Maybe you don't need the whole world to love you, you know. Maybe you just need one person</li></ul>
-                <ul><li>Love is an irresistible desire to be irresistibly desired.</li></ul>
-                <ul><li>I just happened to be nowhere near your neighborhood</li></ul>
-                <ul><li>Love is a two-way street constantly under construction</li></ul>
-                <ul><li>Who, being loved, is poor?</li></ul>
-                <ul><li>I love you and I like you</li></ul>
-                <ul><li>Love me—that's all I ask of you</li></ul>
-                <ul><li>There is no remedy for love, but to love more</li></ul>
-                <ul><li>Give in to love, or live in fear.</li></ul>
-                <ul><li>We loved with a love that was more than love.</li></ul>
-                <ul><li>Love is a friendship set to music</li></ul>
-                <ul><li>The best thing to hold onto in life is each other.</li></ul>
-                <ul><li>Love is composed of a single soul inhabiting two bodies</li></ul>
-        </div>
-            
-        <div class="my-quotes" id="mq-4">
-                <h1>Aesthetic Quotes</h1>
-                <ul><li>The aesthetics aren’t merely a side note. They’re as important as anything else.</li></ul>
-                <ul><li>Aestheticism is the garbage of intuitive feeling</li></ul>
-                <ul><li>Aesthetics is for the artist like ornithology is for the birds</li></ul>
-                <ul><li>Aesthetics is the mother of ethics</li></ul>
-                <ul><li>Only men are capable of aesthetic greatness</li></ul>
-                <ul><li>Aesthetics is the study of ideal form or beauty. It is the philosophy of art</li></ul>
-                <ul><li>I believe that one of the most powerful things of all is aesthetics</li></ul>
-                <ul><li>May these inspiring aesthetic quotes help you learn more about what is beautiful in life.</li></ul>
-                <ul><li>Not All who wander are lost</li></ul>
-                <ul><li>Slow progress is still progress</li></ul>
-                <ul><li>Use things, not people. Love people,not things</li></ul>
-                <ul><li>Love today;Love tomorrow</li></ul>
-                <ul><li>Your Anxiety is lying to you</li></ul>
-                <ul><li>I promise you,it will all make sense again</li></ul>
-                <ul><li>Don't set yourself on fire to keep other on warm</li></ul>
-                <ul><li>I Feel like making Dreams Come True</li></ul>
-                <ul><li>You are not your Parents,you are you. Think like you</li></ul>
-                <ul><li>The road is Long,Keep on walking</li></ul>
-                <ul><li>We all deserve happiness</li></ul>
-                <ul><li>It's a bad day ,not a bad life</li></ul>
-        </div>
-            
-       
-    </div>
+
 </body>
 
 </html>
